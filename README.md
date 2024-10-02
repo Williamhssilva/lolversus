@@ -15,13 +15,13 @@ LOLVersus é uma aplicação web interativa que ajuda jogadores de League of Leg
 
 - Frontend: HTML5, CSS3, JavaScript (ES6+)
 - Backend: Node.js com Express
-- Banco de Dados: MySQL (em transição para MongoDB)
-- Web Scraping: Python com Selenium e BeautifulSoup
-- Hospedagem: GitHub Pages (Frontend) e Glitch (Backend)
+- Banco de Dados: MongoDB Atlas
+- API de Dados: Riot Games API
+- Hospedagem: Glitch (Backend e Frontend)
 
 ## Como Usar 🚀
 
-1. Acesse [https://Williamhssilva.github.io/lolversus](https://Williamhssilva.github.io/lolversus)
+1. Acesse [https://developing-habitual-loaf.glitch.me/](https://developing-habitual-loaf.glitch.me/)
 2. Use a barra de pesquisa para encontrar um campeão
 3. Arraste o campeão para a área de soltar
 4. Veja os melhores counters e suas taxas de vitória
@@ -40,12 +40,15 @@ Para rodar o LOLVersus localmente:
    cd lolversus
    npm install
    ```
-3. Configure as variáveis de ambiente no arquivo `.env`
+3. Configure as variáveis de ambiente no arquivo `.env`:
+   ```
+   MONGODB_URI=sua_uri_do_mongodb_atlas
+   ```
 4. Inicie o servidor:
    ```
    node server.js
    ```
-5. Abra `index.html` no seu navegador
+5. Abra `http://localhost:3000` no seu navegador
 
 ## Contribuindo 🤝
 
