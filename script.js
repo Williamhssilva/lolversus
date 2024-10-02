@@ -1,6 +1,6 @@
 // Constantes
 const DDRAGON_BASE_URL = 'https://ddragon.leagueoflegends.com/cdn/';
-const API_BASE_URL = 'http://192.168.56.1:3000/api/';
+const API_BASE_URL = 'https://developing-habitual-loaf.glitch.me/api/';
 const DEFAULT_IMAGE_PATH = 'caminho/para/imagem/padrao.png';
 
 // Estado global da aplicação

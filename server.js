@@ -1,12 +1,20 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
+// Servir arquivos estáticos da raiz do projeto
+app.use(express.static('.'));
+
+app.use((req, res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+    next();
+});
 
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
@@ -53,6 +61,11 @@ app.get('/api/counters/:championName', async (req, res) => {
         console.error('Erro ao buscar counters:', error);
         res.status(500).json({ error: 'Erro interno do servidor' });
     }
+});
+
+// Rota para a página inicial
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 connectToDatabase().then(() => {
