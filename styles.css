@@ -1,0 +1,238 @@
+/* Estilos gerais */
+:root {
+    --lol-gold: #C8AA6E;
+    --lol-blue: #0AC8B9;
+    --lol-dark: #010A13;
+    --lol-light: #F0E6D2;
+}
+
+body {
+    font-family: 'Beaufort for LOL', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--lol-dark) 0%, #0a323c 50%, var(--lol-dark) 100%);
+    color: var(--lol-light);
+    margin: 0;
+    padding: 20px;
+    /* Removemos a linha de background-image */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--lol-gold);
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#champion-drop {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--lol-gold);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    overflow: visible; /* Alterado de hidden para visible */
+    margin-bottom: 30px; /* Adicionado para dar espaço ao nome */
+}
+
+#champion-drop:hover {
+    box-shadow: 0 0 15px var(--lol-gold);
+}
+
+#champion-drop img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#search-container {
+    width: 100%;
+    max-width: 300px;
+}
+
+#champion-search {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(240, 230, 210, 0.1);
+    border: 1px solid var(--lol-gold);
+    color: var(--lol-light);
+    border-radius: 5px;
+}
+
+#champions-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.champion-card {
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--lol-gold);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.champion-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--lol-blue);
+}
+
+.champion-card img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--lol-gold);
+}
+
+.champion-card h3 {
+    color: var(--lol-light);
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#champion-details {
+    background-color: var(--lol-dark);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+    border: 2px solid var(--lol-gold);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#champion-abilities {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.ability img {
+    width: 64px;
+    height: 64px;
+    border: 2px solid var(--lol-gold);
+    border-radius: 10px;
+}
+
+#close-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: var(--lol-gold);
+    color: var(--lol-dark);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+#close-button:hover {
+    background-color: var(--lol-blue);
+    color: var(--lol-light);
+}
+
+.drag-over {
+    box-shadow: 0 0 20px var(--lol-blue);
+}
+
+/* Estilização da barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--lol-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--lol-gold);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--lol-blue);
+}
+
+#clear-champion {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: var(--lol-gold);
+    color: var(--lol-dark);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#clear-champion:hover {
+    background-color: #e0c388;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#clear-champion:active {
+    background-color: #b69656;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+.champion-name-outside {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--lol-gold);
+    text-shadow: 1px 1px 2px var(--lol-dark);
+    white-space: nowrap;
+    width: 100%;
+}

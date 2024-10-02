@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL Versus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>LoL Versus</h1>
+    </header>
+    <main>
+        <div id="champion-drop" class="champion-slot">
+            <div class="champion-portrait">
+                <p>Arraste um campeão aqui</p>
+            </div>
+        </div>
+        <button id="clear-champion" class="hidden">Limpar Campeão</button>
+        <div id="search-container">
+            <input type="text" id="champion-search" placeholder="Pesquisar campeão..." aria-label="Pesquisar campeão">
+        </div>
+        <div id="champions-list"></div>
+    </main>
+
+    <div id="modal-overlay" class="hidden">
+        <div id="champion-details" class="modal">
+            <div id="champion-header"></div>
+            <div id="champion-abilities"></div>
+            <div id="champion-lore"></div>
+            <button id="close-button" onclick="closeChampionDetails()">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
